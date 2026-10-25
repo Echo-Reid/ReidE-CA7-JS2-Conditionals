@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bear Hunter Ninja</title>
+  </head>
+  <body>
+    <div>
+      <p id="dismessage">Hello World! </p>
+    </div>
+
+    <script>
+      let result = "If you're reading this, an error has occured. Error code 1."
+      /* getting player name and choice */
+      let username = prompt('Welcome to Bear Hunter Ninja! Please enter your name to get started: ');
+      alert(`Hi ${username}! Let\'s Play!!`);
+      let playerChoice = prompt('Who are you: Bear, Ninja, or Hunter?');
+      console.log(`${username}, You picked ${playerChoice}!`);
+
+      /*Deciding the computer's choice*/
+      let computerChoice = "Bear";
+      console.log(`The computer picked ${computerChoice}!`);
+
+      /*logic to determine who wins*/
+      switch (computerChoice) {
+        case "Bear":
+          if (playerChoice === "Bear")
+          {
+            result = "It's a tie.";
+            console.log("It's a tie.");
+          }
+          else if (playerChoice === "Hunter")
+          {
+            result = "You Win!!";
+            console.log("You Win!!");
+          }
+          else if (playerChoice === "Ninja")
+          {
+            result = "You lost...";
+            console.log("You lost...");
+          }
+          else /*Else statements within the switch should ONLY be entered if the player did not enter a valid option*/ 
+          { 
+            result = 'You entered something incorrectly. Please only answer \"Bear\", \"Ninja\", or \"Hunter\", with no spaces or other characters.';
+            console.log('You entered something incorrectly. Please only answer \"Bear\", \"Ninja\", or \"Hunter\", with no spaces or other characters.');
+          }
+          break;
+        case "Ninja":
+          if (playerChoice === "Bear")
+          {
+            result = "You Win!!";
+            console.log("You Win!!");
+          }
+          else if (playerChoice === "Hunter")
+          {
+            result = "You lost...";
+            console.log("You lost...");
+          }
+          else if (playerChoice === "Ninja")
+          {
+            result = "It's a tie.";
+            console.log("It's a tie.");
+          }
+          else 
+          {
+            result = 'You entered something incorrectly. Please only answer \"Bear\", \"Ninja\", or \"Hunter\", with no spaces or other characters.';
+            console.log('You entered something incorrectly. Please only answer \"Bear\", \"Ninja\", or \"Hunter\", with no spaces or other characters.');
+          }
+          break;
+        case "Hunter":
+          if (playerChoice === "Bear")
+          {
+            result = "You lost...";
+            console.log("You lost...");
+          }
+          else if (playerChoice === "Hunter")
+          {
+            result = "It's a tie.";
+            console.log("It's a tie.");
+          }
+          else if (playerChoice === "Ninja")
+          {
+            result = "You Win!!";
+            console.log("You Win!!");
+          }
+          else 
+          {
+            result = 'You entered something incorrectly. Please only answer \"Bear\", \"Ninja\", or \"Hunter\", with no spaces or other characters.';
+            console.log('You entered something incorrectly. Please only answer \"Bear\", \"Ninja\", or \"Hunter\", with no spaces or other characters.');
+          }
+          break;
+        default: /*The default should only happen if the computer choice is somehow not one of the 3 options */
+          result = "The website is experiencing technical difficulties. Error code 2.";
+          console.log("The website is experiencing technical difficulties. Error code 2.");
+
+      }
+
+      /*rewriting the webpage to display results*/
+      document.getElementById("dismessage").innerHTML = `${username}, You picked ${playerChoice}!<br>The computer picked ${computerChoice}!<br>${result}`;
+    </script>
+
+    <div>
+      <hr>
+      <p style="text-align: right;">This page created as academic activity only.</p>
+    </div>
+  </body>
+</html>
