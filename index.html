@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Echo Reid">
     <title>Bear Hunter Ninja</title>
   </head>
   <body>
@@ -15,7 +16,7 @@
       let result = "If you're reading this, an error has occured. Error code 1."
       /* getting player name and choice */
       let username = prompt('Welcome to Bear Hunter Ninja! Please enter your name to get started: ');
-      alert(`Hi ${username}! Let\'s Play!!`);
+      alert(`Hi ${username} Let\'s Play!!`);
       let playerChoice = prompt('Who are you: Bear, Ninja, or Hunter?');
       console.log(`${username}, You picked ${playerChoice}!`);
 
@@ -100,10 +101,5 @@
       /*rewriting the webpage to display results*/
       document.getElementById("dismessage").innerHTML = `${username}, You picked ${playerChoice}!<br>The computer picked ${computerChoice}!<br>${result}`;
     </script>
-
-    <div>
-      <hr>
-      <p style="text-align: right;">This page created as academic activity only.</p>
-    </div>
   </body>
 </html>
